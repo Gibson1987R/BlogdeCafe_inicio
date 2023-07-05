@@ -57,7 +57,7 @@ img {
   max-width: 100%;
 }
 
-/* Utilidades */
+/** Utilidades **/
 
 .no-margin {
   margin: 0;
@@ -67,4 +67,17 @@ img {
 }
 .centrar-texto {
   text-align: center;
+}
+
+/** Header **/
+.header {
+  background-image: url(../img/banner.jpg);
+  height: 60rem;
+  background-size: cover; /* toma todo el espacio */
+  background-repeat: no-repeat; /* para que no se repita */
+  background-position: center center;
+}
+.header__texto {
+  color: var(--blanco);
+  margin-top: 5rem;
 }
