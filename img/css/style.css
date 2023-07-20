@@ -180,16 +180,20 @@ img {
   border: none;
   margin-bottom: 0;
 }
-.widget-cursos__label {
+.widget-cursos__label,
+.curso__label {
   font-family: var(--fuenteHeading);
   font-weight: 700;
 }
-.widget-cursos__info {
+.widget-cursos__info,
+.curso__info {
   font-weight: 400;
 }
 
 .widget-cursos__label,
-.widget-cursos__info {
+.widget-cursos__info,
+.curso__info,
+.curso__label {
   font-size: 2rem;
 }
 
@@ -227,7 +231,7 @@ img {
   /* Seria todo lo anterior asi mas corto con grip */
   .sobre-nosotros {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
   }
 
@@ -236,4 +240,21 @@ img {
   1. Cuando tengas que distribuir entre columnas o definir un ancho de elementos 'UTILIZA MEJOR GRID'
 
   2. Cuando solo vas a distribuir los elementos de izquierda a derecha de manera automatica 'UTILIZA FLEX'***/
+}
+
+/*** Cursos ***/
+/* La parte del label y del info esta arriba para no dublicar codigo */
+.curso {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px) {
+  .curso {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+  }
+}
+.curso:last-of-type {
+  border: none;
 }
