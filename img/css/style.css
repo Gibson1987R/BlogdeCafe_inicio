@@ -198,3 +198,42 @@ img {
   padding-bottom: 3rem;
   margin-top: 4rem;
 }
+
+/**Sobre Nosotros**/
+@media (min-width: 768px) {
+  /*En la version corta de Flex y sin el gap por el poco soporte*/
+  /*     .sobre-nosotros {
+    display: flex;
+    justify-content: space-between;
+  } */
+  /*   .sobre-nosotros__imagen,
+  .sobre-nosotros__texto {
+    flex-basis: calc(50% - 1rem);
+  } */
+
+  /*En la version larga usando el gap y cal o with*/
+  /*     .sobre-nosotros {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  } */
+  /*   .sobre-nosotros__texto {
+    flex: 1;
+  }
+  .sobre-nosotros__imagen {
+    flex: 1;
+  } */
+
+  /* Seria todo lo anterior asi mas corto con grip */
+  .sobre-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 2rem;
+  }
+
+  /***RECOMENDACION FINAL RESPECTO AL GRID Y FLEX
+
+  1. Cuando tengas que distribuir entre columnas o definir un ancho de elementos 'UTILIZA MEJOR GRID'
+
+  2. Cuando solo vas a distribuir los elementos de izquierda a derecha de manera automatica 'UTILIZA FLEX'***/
+}
