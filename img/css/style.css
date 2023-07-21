@@ -156,11 +156,16 @@ img {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 2rem;
+  border: none;
 }
+
 @media (min-width: 768px) {
   .boton {
     display: inline-block;
   }
+}
+.boton:hover {
+  cursor: pointer;
 }
 .boton--primario {
   background-color: var(--negro);
@@ -257,4 +262,50 @@ img {
 }
 .curso:last-of-type {
   border: none;
+}
+
+/***Contacto***/
+
+.contacto-bg {
+  background-image: url(../img/contacto.jpg);
+  height: 40rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.formulario {
+  background-color: var(--blanco);
+  margin: -5rem auto 0 auto;
+  width: 95%;
+  padding: 5rem;
+}
+/* Ubicacion de los elementos del campo con FLEX 
+1. Tenemos un bloque de campo
+2. El bloque tiene dos elementos label y field
+3. Se quiere hacer al primero con base fija sin crecimiento
+4. Se quiere hacer al segundo adaptable al resto del espacio
+
+Difinir en el padre display flex
+Al primero flex 0(crecimiento) 0(decrecimiento) 9rem(base)
+Al segundo flex 1 y toma de esta manera el espacio restante
+
+*/
+.campo {
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.campo__label {
+  flex: 0 0 9rem;
+  text-align: right;
+}
+
+.campo__field {
+  flex: 1;
+  border: 1px solid var(--gris);
+}
+
+.campo__field--textarea {
+  height: 20rem;
 }
