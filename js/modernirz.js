@@ -1,50 +1,48 @@
 /*! modernizr 3.6.0 (Custom Build) | MIT *
  * https://modernizr.com/download/?-setclasses !*/
 !(function (n, e, s) {
-  function o(n) {
-    var e = f.className,
-      s = Modernizr._config.classPrefix || "";
-    if ((l && (e = e.baseVal), Modernizr._config.enableJSClass)) {
-      var o = new RegExp("(^|\\s)" + s + "no-js(\\s|$)");
-      e = e.replace(o, "$1" + s + "js$2");
-    }
-    Modernizr._config.enableClasses &&
-      ((e += " " + s + n.join(" " + s)),
-      l ? (f.className.baseVal = e) : (f.className = e));
-  }
-  function a(n, e) {
+  function o(n, e) {
     return typeof n === e;
   }
-  function i() {
-    var n, e, s, o, i, f, l;
-    for (var c in r)
-      if (r.hasOwnProperty(c)) {
+  function a() {
+    var n, e, s, a, i, l, r;
+    for (var c in f)
+      if (f.hasOwnProperty(c)) {
         if (
           ((n = []),
-          (e = r[c]),
+          (e = f[c]),
           e.name &&
             (n.push(e.name.toLowerCase()),
             e.options && e.options.aliases && e.options.aliases.length))
         )
           for (s = 0; s < e.options.aliases.length; s++)
             n.push(e.options.aliases[s].toLowerCase());
-        for (o = a(e.fn, "function") ? e.fn() : e.fn, i = 0; i < n.length; i++)
-          (f = n[i]),
-            (l = f.split(".")),
-            1 === l.length
-              ? (Modernizr[l[0]] = o)
-              : (!Modernizr[l[0]] ||
-                  Modernizr[l[0]] instanceof Boolean ||
-                  (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])),
-                (Modernizr[l[0]][l[1]] = o)),
-            t.push((o ? "" : "no-") + l.join("-"));
+        for (a = o(e.fn, "function") ? e.fn() : e.fn, i = 0; i < n.length; i++)
+          (l = n[i]),
+            (r = l.split(".")),
+            1 === r.length
+              ? (Modernizr[r[0]] = a)
+              : (!Modernizr[r[0]] ||
+                  Modernizr[r[0]] instanceof Boolean ||
+                  (Modernizr[r[0]] = new Boolean(Modernizr[r[0]])),
+                (Modernizr[r[0]][r[1]] = a)),
+            t.push((a ? "" : "no-") + r.join("-"));
       }
   }
+  function i(n) {
+    var e = r.className,
+      s = Modernizr._config.classPrefix || "";
+    if ((c && (e = e.baseVal), Modernizr._config.enableJSClass)) {
+      var o = new RegExp("(^|\\s)" + s + "no-js(\\s|$)");
+      e = e.replace(o, "$1" + s + "js$2");
+    }
+    Modernizr._config.enableClasses &&
+      ((e += " " + s + n.join(" " + s)),
+      c ? (r.className.baseVal = e) : (r.className = e));
+  }
   var t = [],
-    f = e.documentElement,
-    l = "svg" === f.nodeName.toLowerCase(),
-    r = [],
-    c = {
+    f = [],
+    l = {
       _version: "3.6.0",
       _config: {
         classPrefix: "",
@@ -60,19 +58,17 @@
         }, 0);
       },
       addTest: function (n, e, s) {
-        r.push({ name: n, fn: e, options: s });
+        f.push({ name: n, fn: e, options: s });
       },
       addAsyncTest: function (n) {
-        r.push({ name: null, fn: n });
+        f.push({ name: null, fn: n });
       },
     },
     Modernizr = function () {};
-  (Modernizr.prototype = c),
-    (Modernizr = new Modernizr()),
-    i(),
-    o(t),
-    delete c.addTest,
-    delete c.addAsyncTest;
+  (Modernizr.prototype = l), (Modernizr = new Modernizr());
+  var r = e.documentElement,
+    c = "svg" === r.nodeName.toLowerCase();
+  a(), i(t), delete l.addTest, delete l.addAsyncTest;
   for (var u = 0; u < Modernizr._q.length; u++) Modernizr._q[u]();
   n.Modernizr = Modernizr;
 })(window, document);
